@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.git.GitSCM_-DescriptorImpl>
+  <helpRedirect/>
+  <generation>11</generation>
+  <globalConfigName></globalConfigName>
+  <globalConfigEmail></globalConfigEmail>
+</hudson.plugins.git.GitSCM_-DescriptorImpl>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.s3.S3BucketPublisher_-DescriptorImpl>
+  <helpRedirect/>
+  <profiles>
+    <hudson.plugins.s3.S3Profile>
+      <name>stelligentlabs</name>
+      <accessKey>AKIAIMLM4CLKOKPBG6JA</accessKey>
+      <secretKey>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</secretKey>
+    </hudson.plugins.s3.S3Profile>
+  </profiles>
+</hudson.plugins.s3.S3BucketPublisher_-DescriptorImpl>
