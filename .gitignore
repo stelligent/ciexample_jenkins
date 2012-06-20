@@ -1,0 +1,16 @@
+log
+*.log
+*.tmp
+*.old
+*.bak
+*.jar
+.*
+plugins/
+updates/
+jobs/*/builds
+jobs/*/last*
+jobs/*/next*
+jobs/*/*.csv
+jobs/*/*.txt
+jobs/*/*.log
+jobs/*/workspace
