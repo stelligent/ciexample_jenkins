@@ -48,9 +48,21 @@
   <builders>
     <hudson.tasks.Shell>
       <command>cd software
-ant -f build.xml</command>
+ant -f build.xml
+
+ls</command>
     </hudson.tasks.Shell>
   </builders>
-  <publishers/>
+  <publishers>
+    <hudson.plugins.s3.S3BucketPublisher>
+      <profileName>stelligentlabs</profileName>
+      <entries>
+        <hudson.plugins.s3.Entry>
+          <bucket>bsjartifacts</bucket>
+          <sourceFile>target/deployment/brewery.war</sourceFile>
+        </hudson.plugins.s3.Entry>
+      </entries>
+    </hudson.plugins.s3.S3BucketPublisher>
+  </publishers>
   <buildWrappers/>
 </project>

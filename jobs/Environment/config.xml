@@ -21,6 +21,11 @@
           <description></description>
           <defaultValue>cd00</defaultValue>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>KeyName</name>
+          <description></description>
+          <defaultValue>cd00</defaultValue>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
@@ -65,7 +70,17 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers class="vector"/>
   <concurrentBuild>false</concurrentBuild>
-  <builders/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>ruby /usr/share/tomcat6/scripts/aws/create_domain.rb ${STACK_NAME}
+
+echo &quot;artifact_bucket=$(eval &quot;echo \$${STACK_NAME}_ArtifactBucket&quot;)&quot; &gt;&gt; /tmp/properties
+echo &quot;ip_address=$(eval &quot;echo \$${STACK_NAME}_InstanceIPAddress&quot;)&quot; &gt;&gt; /tmp/properties
+echo &quot;stack_name=$(eval &quot;echo \$${STACK_NAME}_StackName&quot;)&quot; &gt;&gt; /tmp/properties
+
+ruby /usr/share/tomcat6/scripts/aws/load_domain.rb ${STACK_NAME}</command>
+    </hudson.tasks.Shell>
+  </builders>
   <publishers/>
   <buildWrappers>
     <com.syncapse.jenkinsci.plugins.awscloudformationwrapper.CloudFormationBuildWrapper>
@@ -74,11 +89,11 @@
           <stackName>${STACK_NAME}</stackName>
           <description>stack</description>
           <cloudFormationRecipe>software/infrastructure/target.template</cloudFormationRecipe>
-          <parameters>PrivateBucket=${PrivateBucket},PublicBucket=${PublicBucket}</parameters>
+          <parameters>PrivateBucket=${PrivateBucket},PublicBucket=${PublicBucket},KeyName=${KeyName}</parameters>
           <timeout>900</timeout>
           <awsAccessKey>$AWS_ACCESS_KEY</awsAccessKey>
           <awsSecretKey>$AWS_SECRET_ACCESS_KEY</awsSecretKey>
-          <autoDeleteStack>true</autoDeleteStack>
+          <autoDeleteStack>false</autoDeleteStack>
         </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.StackBean>
       </stacks>
     </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.CloudFormationBuildWrapper>
