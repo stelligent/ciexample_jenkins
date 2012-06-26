@@ -58,6 +58,8 @@
   <builders>
     <hudson.tasks.Shell>
       <command>echo ${STACK_NAME}
+cd software/deployment/
+cap deploy:setup
 ls
 pwd</command>
     </hudson.tasks.Shell>
