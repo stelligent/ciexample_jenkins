@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson.tasks.Ant_-DescriptorImpl>
   <helpRedirect/>
-  <installations/>
+  <installations>
+    <hudson.tasks.Ant_-AntInstallation>
+      <name>/usr/bin/ant</name>
+      <home></home>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers/>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+    </hudson.tasks.Ant_-AntInstallation>
+  </installations>
 </hudson.tasks.Ant_-DescriptorImpl>

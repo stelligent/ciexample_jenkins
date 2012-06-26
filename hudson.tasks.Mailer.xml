@@ -3,7 +3,7 @@
   <helpRedirect/>
   <hudsonUrl>http://23.21.120.137:8080/jenkins/</hudsonUrl>
   <smtpAuthUsername>paul.duvall@stelligent.com</smtpAuthUsername>
-  <smtpAuthPassword>y+RDQ0DPIEFsvX3rbjWBKxz1AoeLtUJcvZU4XtsUYI2Oz5/i5g9Z4L2vFU9wOjamp9qCIm5G5HpaTgvwZj8SIQ==</smtpAuthPassword>
+  <smtpAuthPassword>coQHwpmdq483rUqQ6gumsNjw/7WY4z6kF6tpnDHoT1/bIZ5170Z2RFkXT8x+/GFjtw6mbZDXzFtynFV6l3FVA7ZvRAOwS4d+S9YU6jnksKm1xJEvVLvOYD3E5oDMrQqq+2SF8AZzBpJd44e2cVR5Uw==</smtpAuthPassword>
   <adminAddress>admin@stelligent.com</adminAddress>
   <smtpHost>smtp.gmail.com</smtpHost>
   <useSsl>true</useSsl>
